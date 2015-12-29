@@ -11,6 +11,8 @@ Some types of values do not support rounding (Rational{Int64}, for example). Oth
 
 #=
 Intervals are created using ClCl(lo,hi), ClOp(lo,hi), OpCl(lo,hi), OpOp(lo,hi)
+                          (closed-closed, closed-open, open-closed, open-open)
+                          
    lo, hi must be subtypes of Real
    lo and hi may differ in specific type, the types will persist
    lo,hi are sorted internally to ensure lo<=hi **bounds will swap if values swap**
