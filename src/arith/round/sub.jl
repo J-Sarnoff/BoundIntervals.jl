@@ -9,6 +9,7 @@ function (-){B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
 
     newBound = bound( (aLoIsOpen|bLoIsOpen), (aHiIsOpen|bHiIsOpen) )
     
+    # each value can be of a different type
     T = promote_type(promote_type(typeof(a.lo),typeof(b.lo)),promote_type(typeof(a.hi),typeof(b.hi)))
     lo=hi=zero(T)
     
