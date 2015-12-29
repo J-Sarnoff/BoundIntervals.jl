@@ -13,6 +13,7 @@ export ClCl, ClOp, OpCl, OpOp, Xact,
 include("type/abstract.jl")
 include("type/concrete.jl")
 include("type/enfold.jl")
+include("type/convert.jl")
 include("type/compare.jl")
 include("type/io.jl")
 
