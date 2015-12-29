@@ -7,5 +7,7 @@ import Base: convert, promote_type,
     
 include("type/abstract.jl")
 include("type/concrete.jl")
+include("type/enfold.jl")
+
 
 end # module
