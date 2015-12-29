@@ -60,7 +60,7 @@ OpCl(0.7071067811865476, 0.8320502943378437)
 ```
 
 ```ruby
-<more? alright>
+One constructive utilization:
 Each boundary can be a directed 3D locus, giving an interval under torsion.
 ```
 
