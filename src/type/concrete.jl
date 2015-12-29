@@ -8,6 +8,7 @@ immutable Ivl{B<:AkoBound}  <: XtdRealInterval
     hi::Real
 end
 
+# if values are given hi,lo the bounds will be swapped
 for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
   @eval begin
     function ($op)(lo::Real, hi::Real)
