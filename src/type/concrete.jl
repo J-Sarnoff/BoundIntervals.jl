@@ -23,7 +23,7 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
         if lo > hi
            Ivl{swapBound[$T]}(hi,lo)
         else
-           Ivl{$T}(hi,lo)
+           Ivl{$T}(lo,hi)
         end   
     end    
     ($op)(x::Real) = Ivl{$T}(x,x)
@@ -46,7 +46,7 @@ for (op,T) in [(:clcl,:CC), (:clop,:CO), (:opcl,:OC), (:opop, :OO)]
         if lo > hi
            Ivl{$T}(hi,lo)
         else
-           Ivl{$T}(hi,lo)
+           Ivl{$T}(lo,hi)
         end   
     end    
     ($op)(x::Real) = Ivl{$T}(x,x)
