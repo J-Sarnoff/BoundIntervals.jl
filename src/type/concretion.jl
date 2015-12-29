@@ -4,15 +4,10 @@
    these definitions with IvlNum typealiased to Any
    expand the scope of available bounding value types
 =#
-
-Base.isless{C<:Real,D<:Real}(a::Complex{C},b::Complex{D}) = isless(norm(a),norm(b))
-Base.isless{C<:Real,D<:Real}(a::Complex{C},b::D) = isless(norm(a),norm(b))
-Base.isless{C<:Real,D<:Real}(a::C,b::Complex{D}) = isless(norm(a),norm(b))
-Base.isless{C<:Array,D<:Array}(a::C,b::D) = isless(norm(a),norm(b))
-Base.isless{C<:Array,D<:Real}(a::C,b::D) = isless(norm(a),norm(b))
-Base.isless{C<:Real,D<:Array}(a::C,b::D) = isless(norm(a),norm(b))
-Base.isless{C<:Array,D<:Real}(a::C,b::Complex{D}) = isless(norm(a),norm(b))
-Base.isless{C<:Real,D<:Array}(a::Complex{C},b::D) = isless(norm(a),norm(b))
+Base.isless{N1<:Number,N2<:Number}(a::N1,b::N2) = Base.isless(norm(a),norm(b))
+Base.isless{A1<:Array,A2<:Array}(a::A1,b::A2) = isless(norm(a),norm(b))
+Base.isless{N<:Number,A<:Array}(a::N,b::A) = isless(norm(a),norm(b))
+Base.isless{A<:Array,N<:Number}(a::N,b::A) = isless(norm(a),norm(b))
 
 typealias IvlNum Any
 
