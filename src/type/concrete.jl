@@ -18,8 +18,8 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
            Ivl{$T}(lo,hi)
         end
     end
-    function ($op){R<:Real}(lo::R, hi::R) = Ivl{$T}(minmax(lo,hi)...)
-    function ($op)(x::Real) = Ivl{$T}(x,x)
+    ($op){R<:Real}(lo::R, hi::R) = Ivl{$T}(minmax(lo,hi)...)
+    ($op)(x::Real) = Ivl{$T}(x,x)
   end
 end  
 Xact(x::Real) = Ivl{XA}(x,x)
