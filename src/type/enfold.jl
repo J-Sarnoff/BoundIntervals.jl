@@ -30,3 +30,9 @@ OpOp( x::Ivl{CO} ) = Ivl{OO}(prevfloat(x.lo),x.hi)
 OpOp( x::Ivl{OC} ) = Ivl{OO}(x.lo,nextfloat(x.hi))
 OpOp( x::Ivl{OO} ) = x
 
+# applicative conversions that pass values through unchanged
+clcl{B<:AkoBound}(x::Ivl{B}) = Ivl{CC}(x.lo,x.hi)
+clop{B<:AkoBound}(x::Ivl{B}) = Ivl{CO}(x.lo,x.hi)
+opcl{B<:AkoBound}(x::Ivl{B}) = Ivl{OC}(x.lo,x.hi)
+opop{B<:AkoBound}(x::Ivl{B}) = Ivl{OO}(x.lo,x.hi)
+
