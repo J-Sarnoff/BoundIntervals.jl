@@ -43,9 +43,11 @@ julia> sqrt(OpCl(2.0,3.0))
   OpCl(1.4142135623730951, 1.7320508075688772)
 # OpCl(1.4142135623730950, 1.7320508075688774)  when module loaded with UseRounding=true
 ```
-  You may instruct the module to accept only values that are a subtype of Real as boundary values.  
-  Set __OnlyRealTypes=true__ before 'using' this module to accomplish that.  
-  Otherwise, you allow the module to accept boundary values from a deeper type palette:
+
+>  You may instruct the module to accept only values that are a subtype of Real as boundary values.  
+>  Set __OnlyRealTypes=true__ before 'using' this module to accomplish that.  
+>  Otherwise, you allow the module to accept boundary values from a deeper type palette:
+
 ```julia
 julia> using BoundIntervals
 
