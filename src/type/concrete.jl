@@ -24,9 +24,11 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
 end  
 Xact(x::Real) = Ivl{XA}(x,x)
 
+# discover the kind of bound
 bound{B<:AkoBound}(::Type{Ivl{B}}) = B
 bound{B<:AkoBound}(x::Ivl{B}) = B
 
+# characterize the kind of bound
 # false for closed bound, true for open bound 
 for (T,lo,hi) in ((:CC,false,false), (:CO,false,true), (:OC,true,false), (:OO,true,true), (:XA,false,false))
     @eval bounds(::Type{Ivl{$T}}) = ($lo,$hi)
@@ -34,6 +36,7 @@ for (T,lo,hi) in ((:CC,false,false), (:CO,false,true), (:OC,true,false), (:OO,tr
     @eval bounds(::Type{$T}) = ($lo,$hi)
 end
 
+# impute a kind of bound
 const BoundVec = [CC, OC, CO, OO]
 bound(lo::Bool, hi::Bool) = BoundVec[(one(Int8) + reinterpret(Int8, lo) + (reinterpret(Int8, hi) << 1))]
 
