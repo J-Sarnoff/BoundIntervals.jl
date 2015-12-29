@@ -3,6 +3,7 @@ module BoundedRealIntervals
 import Base: convert, promote_type,
     string, hash, show, showcompact,
     sign, changesign, flipsign, abs,
+    (==),(!=),(<=),(<),(>),(>=),isequal,isless,
     (+),(-),(*),(/),sqrt,hypot
     
 export ClCl, ClOp, OpCl, OpOp,
