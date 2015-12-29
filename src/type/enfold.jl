@@ -36,3 +36,9 @@ clop{B<:AkoBound}(x::Ivl{B}) = Ivl{CO}(x.lo,x.hi)
 opcl{B<:AkoBound}(x::Ivl{B}) = Ivl{OC}(x.lo,x.hi)
 opop{B<:AkoBound}(x::Ivl{B}) = Ivl{OO}(x.lo,x.hi)
 
+
+
+
+
+
+
