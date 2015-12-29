@@ -39,6 +39,6 @@ ClOp(3.0, 4.0), OpOp(3.0, 6.0)
 
 julia> sqrt(OpCl(2.0,3.0))
   OpCl(1.4142135623730951, 1.7320508075688772)
-# OpCl(1.4142135623730950, 1.7320508075688774)  with UseRounding=true
+# OpCl(1.4142135623730950, 1.7320508075688774)  when module loaded with UseRounding=true
 
 
