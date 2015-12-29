@@ -59,11 +59,16 @@ julia> d=typeof(c)(cos(angle(c.lo.lo)), cos(angle(c.hi.hi)))
 OpCl(0.7071067811865476, 0.8320502943378437)
 ```
 
->>> each boundary can be a locus directed in 3D space, then the interval is under torsion
+####**each boundary can be a locus directed in 3D space, then the interval is under torsion**
+
+
 ```julia
+
 # most prompts omitted
+
 using BoundIntervals
 using Quaternions
+
 q1=Quaternion(4,3,2,1);q1n=q1/norm(q1);
 q2=Quaternion(1,1,3,1);q2n=q2/norm(q2);
 q3=Quaternion(1,2,2,1);q3n=q3/norm(q3);
@@ -87,7 +92,5 @@ julia> isapprox(axis(qq.lo),axis(q2n*q3n)), isapprox(angle(qq.hi),angle(q1n*q2n)
 
 ```
 
-
-```
 
 
