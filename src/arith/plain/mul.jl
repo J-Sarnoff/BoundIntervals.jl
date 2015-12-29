@@ -50,8 +50,8 @@ for (fn,loa,lob,hia,hib) in [ (:mulLteLte, :(a.hi), :(b.hi), :(a.lo), :(b.lo)),
         bLoIsOpen, bHiIsOpen = bounds(B2)
         newBound = bound( (aLoIsOpen|bLoIsOpen), (aHiIsOpen|bHiIsOpen) )
 
-        lo = (*)(($loa), ($lob)) # RoundDown
-        hi = (*)(($hia), ($hib)) # RoundUp
+        lo = (*)(($loa), ($lob))
+        hi = (*)(($hia), ($hib))
 
         Ivl{newBound}(lo, hi)
     end
