@@ -1,5 +1,9 @@
 # abstract types used in concrete.jl
 
+abstract XtdRealInterval <: Real              # interval over the Extended Reals (allows +/- infinity)
+abstract RealInterval    <: XtdRealInterval   # interval over the Reals 
+
+
 abstract AkoBound
                         #    lo     hi
 abstract CC  <: AkoBound # closed-closed
