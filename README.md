@@ -57,9 +57,37 @@ OpCl(Xact(1.0 + 1.0im), OpOp(0.5 + 1.0im, 1.5 - 1.0im))
 
 julia> d=typeof(c)(cos(angle(c.lo.lo)), cos(angle(c.hi.hi)))
 OpCl(0.7071067811865476, 0.8320502943378437)
+```
 
+>>> each boundary can be a locus directed in 3D space, then the interval is under torsion
+```julia
+# most prompts omitted
+using BoundIntervals
+using Quaternions
+q1=Quaternion(4,3,2,1);q1n=q1/norm(q1);
+q2=Quaternion(1,1,3,1);q2n=q2/norm(q2);
+q3=Quaternion(1,2,2,1);q3n=q3/norm(q3);
+qq=OpOp(q1,q2) * OpOp(q2,q3);
+qqlo=qq.lo/norm(qq.lo); qqhi=qq.hi/norm(qq.hi);
 
+# the two boundary values, their 3D orientation and twist
+julia>qqLineSeg = ClCl(norm(qq.lo), norm(qq.hi))
+ClCl(10.954451150103322, 18.973665961010276)
+
+# their 3D orientation and twist
+julia> axis(qq.lo), angle(qq.lo)
+([0.5345224838248489,0.8017837257372734,-0.26726124191242445],2.389552564397458)
+julia> axis(qqhi),angle(qqhi)
+([0.33333333333333337,0.6666666666666667,0.6666666666666667],1.892546881191539)
+
+# this check verifies that the math lets us carry the 'normal' boundary values
+#    (the values bounding qqLineSeg) with the 3D axes and angles properly
+julia> isapprox(axis(qq.lo),axis(q2n*q3n)), isapprox(angle(qq.hi),angle(q1n*q2n))
+(true, true)
+
+```
 
 
 ```
-  
+
+
