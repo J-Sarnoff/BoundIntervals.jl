@@ -29,4 +29,10 @@ ClOp(2.0f0, 1.0000001f0), OpCl(1.9999999f0, 1.0f0), ClCl(1.0f0, 2.0f0)
 julia> clop(ClCl(1.0f0,2.0f0)), opcl(ClCl(1.0f0,2.0f0)), clcl(OpOp(1.0f0 2.0f0))
 ClOp(1.0f0, 2.0f0), OpCl(1.0f0, 2.0f0), ClCl(1.0f0, 2.0f0)
 
+# ordering
+julia> ClOp(1.0) < OpCl(1.0), OpOp(1.0,2.0) != OpCl(1.0,2.0)
+true, true
 
+# arithmetic
+julia> ClOp(1.0)+ClOp(2.0,3.0), sqrt(OpCl(2.0,3.0)), OpCl(9.0,12.0)/ClOp(2.0,3.0)
+ClOp(3.0, 4.0), OpCl(1.4142135623730951, 1.7320508075688772), OpOp(3.0, 6.0)
