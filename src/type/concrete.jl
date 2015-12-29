@@ -32,4 +32,9 @@ for (T,lo,hi) in ((:CC,false,false), (:CO,false,true), (:OC,true,false), (:OO,tr
     @eval bounds(::Type{Ivl{$T}}) = ($lo,$hi)
     @eval bounds(x::Ivl{$T}) = ($lo,$hi)
 end
-bounds
+
+const BoundVec = [CC, OC, CO, OO]
+bound(lo::Bool, hi::Bool) = BoundVec[(one(Int8) + reinterpret(Int8, lo) + (reinterpret(Int8, hi) << 1))]
+
+
+
