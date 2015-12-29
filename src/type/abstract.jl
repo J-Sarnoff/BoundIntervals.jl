@@ -17,3 +17,5 @@ string(::Type{CO}) = "ClOp"
 string(::Type{OC}) = "OpCl"
 string(::Type{OO}) = "OpOp"
 string(::Type{XA}) = "Xact"
+
+const swapBound = Dict( CC => CC, CO => OC, OC => CO, OO => OO, XA => XA );
