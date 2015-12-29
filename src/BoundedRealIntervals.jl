@@ -12,6 +12,7 @@ export ClCl, ClOp, OpCl, OpOp,
 include("type/abstract.jl")
 include("type/concrete.jl")
 include("type/enfold.jl")
+include("type/compare.jl")
 include("type/io.jl")
 
 if isdefined(Main,:UseRounding) && (Main.UseRounding==true)
@@ -19,11 +20,15 @@ include("arith/round/add.jl")
 include("arith/round/sub.jl")
 include("arith/round/mul.jl")
 include("arith/round/div.jl")
+include("arith/round/sqrt.jl")
+include("arith/round/sqr.jl")
 else
 include("arith/plain/add.jl")
 include("arith/plain/sub.jl")
 include("arith/plain/mul.jl")
 include("arith/plain/div.jl")
+include("arith/plain/sqrt.jl")
+include("arith/plain/sqr.jl")
 end # UseRounding
 
 
