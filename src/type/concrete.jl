@@ -13,12 +13,18 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
     function ($op)(lo::Real, hi::Real)
         low,hig= promote(lo,hi)
         if (low > hig)
-           Ivl{$T}(hi,lo)
+           Ivl{swapBound[$T]}(hi,lo)
         else
            Ivl{$T}(lo,hi)
         end
     end
-    ($op){R<:Real}(lo::R, hi::R) = Ivl{$T}(minmax(lo,hi)...)
+    function ($op){R<:Real}(lo::R, hi::R)
+        if lo > hi
+           Ivl{swapBound[$T]}(hi,lo)
+        else
+           Ivl{$T}(hi,lo)
+        end   
+    end    
     ($op)(x::Real) = Ivl{$T}(x,x)
   end
 end  
