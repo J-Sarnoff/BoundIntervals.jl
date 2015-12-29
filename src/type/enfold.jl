@@ -1,4 +1,4 @@
-# applicative conversion
+# applicative conversions that maintain enclosure
 
 Xact( x::Ivl{XA} ) = x
 Xact( x::Ivl{CC} ) = Ivl{XA}(x.lo/2+x.hi/2)
