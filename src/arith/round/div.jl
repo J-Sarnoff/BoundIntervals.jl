@@ -46,6 +46,7 @@ for (fn,loa,lob,hia,hib) in [ (:divLteLte, :(a.hi), :(b.lo), :(a.lo), :(b.hi)),
         bLoIsOpen, bHiIsOpen = bounds(B2)
         newBound = bound( (aLoIsOpen|bLoIsOpen), (aHiIsOpen|bHiIsOpen) )
 
+        # each value can be of a different type
         T = promote_type(promote_type(typeof(a.lo),typeof(b.lo)),promote_type(typeof(a.hi),typeof(b.hi)))
         lo=hi=zero(T)
     
