@@ -1,6 +1,6 @@
 module BoundIntervals
 
-import Base: convert, promote_type,
+import Base: convert, promote_rule, promote_type,
     string, hash, show, showcompact,
     sign, copysign, flipsign, abs,
     (==),(!=),(<=),(<),(>),(>=),isequal,isless,
