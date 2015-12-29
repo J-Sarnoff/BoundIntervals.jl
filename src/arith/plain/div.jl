@@ -65,9 +65,9 @@ function divisorContainsZero{B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
     end   
     if b.lo == 0.0
        lo = 1.0 / b.hi
-       hi = (R)(Inf)
+       hi = typeof(b.lo)(Inf)
     else b.hi == 0.0
-       lo = (R)(-Inf)
+       lo = typeof(b.hi)(-Inf)
        hi = 1.0 / b.lo
     end
 
