@@ -11,7 +11,13 @@ export ClCl, ClOp, OpCl, OpOp, Xact,
        sqr
     
 include("type/abstract.jl")
+
+if isdefined(Main,:AllowManyTypes) && (Main.AllowMany==true)
+include("type/concretion.jl")
+else
 include("type/concrete.jl")
+end
+
 include("type/enfold.jl")
 include("type/convert.jl")
 include("type/compare.jl")
