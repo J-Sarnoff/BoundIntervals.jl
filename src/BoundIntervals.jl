@@ -6,7 +6,7 @@ import Base: convert, promote_type,
     (==),(!=),(<=),(<),(>),(>=),isequal,isless,
     (+),(-),(*),(/),sqrt,hypot
     
-export ClCl, ClOp, OpCl, OpOp,
+export ClCl, ClOp, OpCl, OpOp, Xact,
        clcl, clop, opcl, opop,
        sqr
     
