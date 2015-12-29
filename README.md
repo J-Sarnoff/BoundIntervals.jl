@@ -60,8 +60,8 @@ OpCl(0.7071067811865476, 0.8320502943378437)
 ```
 
 ```ruby
-
-**each boundary can be a directed 3D locus, giving an interval under torsion**
+<more? alright>
+Each boundary can be a directed 3D locus, giving an interval under torsion.
 ```
 
 ```julia
