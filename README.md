@@ -13,3 +13,9 @@ ClOp(2,5), ClOp(2,5)
 
 julia> clop(2,5), opcl(5,2)  #  for programming, lowercased they sort but do not swap bounds
 ClOp(2,5), OpCl(2,5)
+
+# intervals may be bounds converted, maintaining enclosure
+julia> ClOp(ClCl(1.0f0,2.0f0)), OpCl(ClCl(1.0f0,2.0f0)), ClCl(OpOp(1.0f0,2.0f0))
+ClOp(2.0f0,1.0000001f0), OpCl(1.9999999f0,1.0f0), ClCl(1.0f0,2.0f0)
+
+
