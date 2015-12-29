@@ -2,8 +2,12 @@ module BoundedRealIntervals
 
 import Base: convert, promote_type,
     string, hash, show, showcompact,
-    sign, changesign, flipsign, abs
+    sign, changesign, flipsign, abs,
+    (+),(-),(*),(/),sqrt,hypot
     
+export ClCl, ClOp, OpCl, OpOp,
+       clcl, clop, opcl, opop,
+       sqr
     
 include("type/abstract.jl")
 include("type/concrete.jl")
