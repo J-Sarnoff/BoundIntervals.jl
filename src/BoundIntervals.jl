@@ -1,4 +1,4 @@
-module BoundedRealIntervals
+module BoundIntervals
 
 import Base: convert, promote_type,
     string, hash, show, showcompact,
