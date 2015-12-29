@@ -31,6 +31,7 @@ bound{B<:AkoBound}(x::Ivl{B}) = B
 for (T,lo,hi) in ((:CC,false,false), (:CO,false,true), (:OC,true,false), (:OO,true,true), (:XA,false,false))
     @eval bounds(::Type{Ivl{$T}}) = ($lo,$hi)
     @eval bounds(x::Ivl{$T}) = ($lo,$hi)
+    @eval bounds(::Type{$T}) = ($lo,$hi)
 end
 
 const BoundVec = [CC, OC, CO, OO]
