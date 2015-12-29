@@ -1,7 +1,7 @@
 # BoundIntervals.jl
 Extended Real Intervals with bounds that are Open, Closed or Mixed
 
->>This software is scaffolding for experimentation with interval valued items and for development of types of >>values that are intended to value intervals.  Let me know of things not present, not ok, not easy to use.
+_This software is scaffolding for experimentation with interval valued items and for development of types of values that are intended to value intervals.  Please let me know of things not present, not clear, not ok, not easy to use._
 
 
 Some types of values do not support rounding (Rational{Int64}, for example). Others do, e.g. Float64.
