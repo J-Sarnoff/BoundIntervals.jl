@@ -9,4 +9,7 @@ Intervals are created using ClCl(lo,hi), ClOp(lo,hi), OpCl(lo,hi), OpOp(lo,hi)
    lo,hi are sorted internally to ensure lo<=hi **bounds will swap if values swap**
 =#
 julia> ClOp(2,5), OpCl(5,2)  # if values are given hi,lo the bounds will be swapped
-ClOp(2,5), ClOp(2,5)         # for programming, there is a way to bypass swapping bounds 
+ClOp(2,5), ClOp(2,5)
+
+julia> clop(2,5), opcl(5,2)  #  for programming, lowercased they sort but do not swap bounds
+ClOp(2,5), OpCl(2,5)
