@@ -3,7 +3,7 @@ Extended Real Intervals with bounds that are Open, Closed or Mixed
 
 Some types of values do not support rounding (Rational{Int64}, for example). Others do, e.g. Float64.
 
->   set UseRounding=true before 'using' this module, if you want interval math with directed rounding.
+>   set __UseRounding=true__ before 'using' this module, if you want interval math with directed rounding.
 >   Otherwise, all interval arithmetic will be performed using the default, RoundNearest mode.
 
 
