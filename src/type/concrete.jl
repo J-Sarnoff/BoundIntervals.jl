@@ -30,6 +30,30 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
 end  
 Xact(x::Real) = Ivl{XA}(x,x)
 
+# for use in programming, lowercased they sort lo,hi but do not swap bounds
+for (op,T) in [(:clcl,:CC), (:clop,:CO), (:opcl,:OC), (:opop, :OO)]
+  @eval begin
+    function ($op)(lo::Real, hi::Real)
+        low,hig= promote(lo,hi)
+        if (low > hig)
+           Ivl{$T}(hi,lo)
+        else
+           Ivl{$T}(lo,hi)
+        end
+    end
+    function ($op){R<:Real}(lo::R, hi::R)
+        if lo > hi
+           Ivl{$T}(hi,lo)
+        else
+           Ivl{$T}(hi,lo)
+        end   
+    end    
+    ($op)(x::Real) = Ivl{$T}(x,x)
+  end
+end  
+xact(x::Real) = Ivl{XA}(x,x)
+
+
 # discover the kind of bound
 bound{B<:AkoBound}(::Type{Ivl{B}}) = B
 bound{B<:AkoBound}(x::Ivl{B}) = B
