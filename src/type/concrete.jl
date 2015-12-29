@@ -24,3 +24,12 @@ for (op,T) in [(:ClCl,:CC), (:ClOp,:CO), (:OpCl,:OC), (:OpOp, :OO)]
 end  
 Xact(x::Real) = Ivl{XA}(x,x)
 
+bound{B<:AkoBound}(::Type{Ivl{B}}) = B
+bound{B<:AkoBound}(x::Ivl{B}) = B
+
+# false for closed bound, true for open bound 
+for (T,lo,hi) in ((:CC,false,false), (:CO,false,true), (:OC,true,false), (:OO,true,true), (:XA,false,false))
+    @eval bounds(::Type{Ivl{$T}}) = ($lo,$hi)
+    @eval bounds(x::Ivl{$T}) = ($lo,$hi)
+end
+bounds
