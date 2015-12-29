@@ -12,7 +12,7 @@ export ClCl, ClOp, OpCl, OpOp, Xact,
     
 include("type/abstract.jl")
 
-if isdefined(Main,:AllowManyTypes) && (Main.AllowMany==true)
+if isdefined(Main,:UseManyTypes) && (Main.UseManyTypes==true)
 include("type/concretion.jl")
 else
 include("type/concrete.jl")
