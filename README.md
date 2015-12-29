@@ -59,8 +59,10 @@ julia> d=typeof(c)(cos(angle(c.lo.lo)), cos(angle(c.hi.hi)))
 OpCl(0.7071067811865476, 0.8320502943378437)
 ```
 
-####**each boundary can be a locus directed in 3D space, then the interval is under torsion**
+```ruby
 
+**each boundary can be a directed 3D locus, giving an interval under torsion**
+```
 
 ```julia
 
