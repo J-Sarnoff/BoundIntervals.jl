@@ -12,10 +12,10 @@ export ClCl, ClOp, OpCl, OpOp, Xact,
     
 include("type/abstract.jl")
 
-if isdefined(Main,:UseManyTypes) && (Main.UseManyTypes==true)
-include("type/concretion.jl")
-else
+if isdefined(Main,:OnlyRealTypes) && (Main.OnlyRealTypes==true)
 include("type/concrete.jl")
+else
+include("type/concretion.jl")
 end
 
 include("type/enfold.jl")
