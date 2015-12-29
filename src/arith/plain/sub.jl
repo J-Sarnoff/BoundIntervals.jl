@@ -1,5 +1,5 @@
 @inline function (-){B<:AkoBound}(a::Ivl{B})
-   Ivl{negate(B)}(-a.hi, -a.lo)
+   Ivl{swapBound(B)}(-a.hi, -a.lo)
 end
 
 
