@@ -9,7 +9,7 @@
 =#
 
 function (/){B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
-    z = zero(R)
+    z = 0.0
     if (b.lo == z) | (b.hi == z) | ((b.lo < z) & (b.hi > z))
       divisorContainsZero(a,b)
    elseif a.hi <= z
