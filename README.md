@@ -31,7 +31,7 @@ julia> ClOp(ClCl(1.0f0,2.0f0)), OpCl(ClCl(1.0f0,2.0f0)), ClCl(OpOp(1.0f0,2.0f0))
 ClOp(2.0f0, 1.0000001f0), OpCl(1.9999999f0, 1.0f0), ClCl(1.0f0, 2.0f0)
 
 # for programming, bounds may be converted without altering the bounding values
-julia> clop(ClCl(1.0f0,2.0f0)), opcl(ClCl(1.0f0,2.0f0)), clcl(OpOp(1.0f0 2.0f0))
+julia> clop(ClCl(1.0f0,2.0f0)), opcl(ClCl(1.0f0,2.0f0)), clcl(OpOp(1.0f0,2.0f0))
 ClOp(1.0f0, 2.0f0), OpCl(1.0f0, 2.0f0), ClCl(1.0f0, 2.0f0)
 
 # ordering
