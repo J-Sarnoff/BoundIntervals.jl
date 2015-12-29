@@ -5,7 +5,7 @@ function sqrt{B<:AkoBound}(a::Ivl{B})
     with_rounding(T,RoundDown) do
         lo = sqrt(a.lo)
     end
-    with_rounding(T,RoundDown) do
+    with_rounding(T,RoundUp) do
         hi = sqrt(a.hi)
     end
     
