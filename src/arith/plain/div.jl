@@ -60,7 +60,8 @@ function divisorContainsZero{B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
     bLoIsOpen, bHiIsOpen = bounds(B2)
     newBound = bound( (aLoIsOpen|bLoIsOpen), (aHiIsOpen|bHiIsOpen) )
 
-    if (b.lo < 0.0) & (b.hi > 0.0)
+    z = zero(typeof(b.lo))
+    if (b.lo < z) & (b.hi > z)
        return divisorStraddlesZero(a,b)
     end   
     if b.lo == 0.0
