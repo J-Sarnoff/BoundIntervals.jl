@@ -7,7 +7,7 @@
 =#
 
 function (*){B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
-    z = 0.0
+    z = zero(typeof(a.hi))
     if     a.hi <= z
        if     b.hi <= z
            mulLteLte(a,b)
