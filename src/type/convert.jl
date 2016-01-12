@@ -27,3 +27,26 @@ promote_rule(::Type{Ivl{CO}},::Type{Ivl{XA}}) = Ivl{CO}
 promote_rule(::Type{Ivl{OC}},::Type{Ivl{XA}}) = Ivl{OC}
 promote_rule(::Type{Ivl{OO}},::Type{Ivl{XA}}) = Ivl{OO}
 
+convert{F<:AbstractFloat}(::Type{Ivl{CC}}, x::F) = ClCl(x,x)
+convert{F<:AbstractFloat}(::Type{Ivl{CO}}, x::F) = ClOp(x,nextfloat(x))
+convert{F<:AbstractFloat}(::Type{Ivl{OC}}, x::F) = OpCl(prevfloat(x),x)
+convert{F<:AbstractFloat}(::Type{Ivl{OO}}, x::F) = OpOp(prevfloat(x),nextfloat(x))
+convert{F<:AbstractFloat}(::Type{Ivl{XA}}, x::F) = Xact(x)
+
+convert{F<:Integer}(::Type{Ivl{CC}}, x::F) = ClCl(x,x)
+convert{F<:Integer}(::Type{Ivl{CO}}, x::F) = ClOp(x,x)
+convert{F<:Integer}(::Type{Ivl{OC}}, x::F) = OpCl(x,x)
+convert{F<:Integer}(::Type{Ivl{OO}}, x::F) = OpOp(x,x)
+convert{F<:Integer}(::Type{Ivl{XA}}, x::F) = Xact(x)
+
+promote_rule{F<:AbstractFloat}{::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
+promote_rule{F<:AbstractFloat}{::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
+promote_rule{F<:AbstractFloat}{::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
+promote_rule{F<:AbstractFloat}{::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
+promote_rule{F<:AbstractFloat}{::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
+
+promote_rule{F<:Integer}{::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
+promote_rule{F<:Integer}{::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
+promote_rule{F<:Integer}{::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
+promote_rule{F<:Integer}{::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
+promote_rule{F<:Integer}{::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
