@@ -63,8 +63,8 @@ function mulZerZer{B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
         bLoIsOpen, bHiIsOpen = bounds(B2)
         newBound = bound( (aLoIsOpen|bLoIsOpen), (aHiIsOpen|bHiIsOpen) )
 
-        lo = min( (*)(B1.lo,B2.hi), (*)(B1.hi,B2.lo) )
-        hi = max( (*)(B1.lo,B2,lo), (*)(B1.hi,B2.hi) )
+        lo = min( (*)(a.lo, b.hi), (*)(a.hi, b.lo) )
+        hi = max( (*)(a.lo, b.lo), (*)(a.hi, b.hi) )
         
         Ivl{newBound}(lo,hi)
 end
