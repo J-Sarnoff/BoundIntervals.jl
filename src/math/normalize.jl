@@ -10,7 +10,7 @@ ref:  Improving interval enclosures
 =#
 
 
-normalize{B1<:AkoBound,B2<:AkoBound}(x::Ivl{B1}, y::Ivl{B2})
+function normalize{B1<:AkoBound,B2<:AkoBound}(x::Ivl{B1}, y::Ivl{B2})
     xLoIsOpen, xHiIsOpen = bounds(B1)
     yLoIsOpen, yHiIsOpen = bounds(B2)
 
@@ -34,7 +34,7 @@ normalize{B1<:AkoBound,B2<:AkoBound}(x::Ivl{B1}, y::Ivl{B2})
     (xx, yy)
 end
 
-normalize{B1<:AkoBound,B2<:AkoBound,B3<:AkoBound}(x::Ivl{B1}, y::Ivl{B2}, z::Ivl{B3})
+function normalize{B1<:AkoBound,B2<:AkoBound,B3<:AkoBound}(x::Ivl{B1}, y::Ivl{B2}, z::Ivl{B3})
     xLoIsOpen, xHiIsOpen = bounds(B1)
     yLoIsOpen, yHiIsOpen = bounds(B2)
     zLoIsOpen, zHiIsOpen = bounds(B3)
