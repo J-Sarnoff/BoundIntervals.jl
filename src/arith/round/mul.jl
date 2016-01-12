@@ -76,10 +76,10 @@ function mulZerZer{B1<:AkoBound,B2<:AkoBound}(a::Ivl{B1}, b::Ivl{B2})
         lo=hi=zero(T)
     
         with_rounding(T,RoundDown) do
-            lo = min( (*)(B1.lo, B2.hi), (*)(B1.hi, B2.lo) )
+            lo = min( (*)(a.lo, b.hi), (*)(a.hi, b.lo) )
         end
         with_rounding(T,RoundUp) do
-            hi = max( (*)(B1.lo, B2.lo), (*)(B1.hi, B2.hi) )
+            hi = max( (*)(a.lo, b.lo), (*)(a.hi, b.hi) )
         end    
 
         Ivl{newBound}(lo,hi)
