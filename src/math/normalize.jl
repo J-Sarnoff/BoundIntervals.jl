@@ -20,8 +20,8 @@ function normalize{B1<:AkoBound,B2<:AkoBound}(x::Ivl{B1}, y::Ivl{B2})
     T = promote_type(promote_type(typeof(x.lo),typeof(y.lo)),promote_type(typeof(x.hi),typeof(y.hi)))
     xx=yy=zero(T)
     
-    x2 = x*x
-    y2 = y*y
+    x2 = sqr(x)
+    y2 = sqr(y)
 
     lo = x.lo / sqrt(x.lo*x.lo + y2.hi)
     hi = x.hi / sqrt(x.hi*x.hi + y2.lo)
@@ -46,9 +46,9 @@ function normalize{B1<:AkoBound,B2<:AkoBound,B3<:AkoBound}(x::Ivl{B1}, y::Ivl{B2
     T = promote_type(promote_type(T,typeof(z.lo)),typeof(z.hi))
     xx=yy=zz=zero(T)
     
-    x2 = x*x
-    y2 = y*y
-    z2 = z*z
+    x2 = sqr(x)
+    y2 = sqr(y)
+    z2 = sqr(z)
     
     w = y2 + z2
     
