@@ -8,7 +8,7 @@ import Base: convert, promote_rule, promote_type,
     
 export ClCl, ClOp, OpCl, OpOp, Xact,
        clcl, clop, opcl, opop,
-       sqr
+       sqr, lerp, normalize
     
 include("type/abstract.jl")
 
