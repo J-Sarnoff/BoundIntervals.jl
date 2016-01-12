@@ -39,14 +39,14 @@ convert{F<:Integer}(::Type{Ivl{OC}}, x::F) = OpCl(x,x)
 convert{F<:Integer}(::Type{Ivl{OO}}, x::F) = OpOp(x,x)
 convert{F<:Integer}(::Type{Ivl{XA}}, x::F) = Xact(x)
 
-promote_rule{F<:AbstractFloat}{::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
-promote_rule{F<:AbstractFloat}{::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
-promote_rule{F<:AbstractFloat}{::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
-promote_rule{F<:AbstractFloat}{::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
-promote_rule{F<:AbstractFloat}{::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
+promote_rule{F<:AbstractFloat}(::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
+promote_rule{F<:AbstractFloat}(::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
+promote_rule{F<:AbstractFloat}(::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
+promote_rule{F<:AbstractFloat}(::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
+promote_rule{F<:AbstractFloat}(::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
 
-promote_rule{F<:Integer}{::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
-promote_rule{F<:Integer}{::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
-promote_rule{F<:Integer}{::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
-promote_rule{F<:Integer}{::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
-promote_rule{F<:Integer}{::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
+promote_rule{F<:Integer}(::Type{Ivl{CC}}, ::Type{F}) = Ivl{CC}
+promote_rule{F<:Integer}(::Type{Ivl{CO}}, ::Type{F}) = Ivl{CO}
+promote_rule{F<:Integer}(::Type{Ivl{OC}}, ::Type{F}) = Ivl{OC}
+promote_rule{F<:Integer}(::Type{Ivl{OO}}, ::Type{F}) = Ivl{OO}
+promote_rule{F<:Integer}(::Type{Ivl{XA}}, ::Type{F}) = Ivl{XA}
