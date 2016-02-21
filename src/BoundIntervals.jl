@@ -39,6 +39,7 @@ include("arith/plain/sqrt.jl")
 include("arith/plain/sqr.jl")
 end # UseRounding
 
+include("math/unaryfuncs.jl")
 include("math/lerp.jl")
 include("math/normalize.jl")
 
