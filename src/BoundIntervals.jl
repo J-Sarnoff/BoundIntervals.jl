@@ -4,7 +4,13 @@ import Base: convert, promote_rule, promote_type,
     string, hash, show, showcompact,
     sign, copysign, flipsign, abs,
     (==),(!=),(<=),(<),(>),(>=),isequal,isless,
-    (+),(-),(*),(/),sqrt,hypot
+    (+),(-),(*),(/),sqrt,hypot,
+    exp, expm1, :log, :log1p,
+    sin, cos, tan, csc, sec, cot,
+    asin, acos, atan, acsc, asec, acot,
+    sinh, cosh, tanh, csch, sech, coth,
+    asinh, acosh, atanh, acsch, asech, acoth,
+    erf, erfinv
     
 export ClCl, ClOp, OpCl, OpOp, Xact,
        clcl, clop, opcl, opop,
